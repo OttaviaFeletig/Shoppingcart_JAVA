@@ -2,10 +2,10 @@
 public class Product {
 
     private String name;
-    private int price;
-    private int quantity;
+    private Integer price;
+    private Integer quantity;
 
-    public Product(String productName, int productPrice, int productQuantity) {
+    public Product(String productName, Integer productPrice, Integer productQuantity) {
         this.name = productName;
         this.price = productPrice;
         this.quantity = productQuantity;
@@ -19,7 +19,7 @@ public class Product {
         this.name = name;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 

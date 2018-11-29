@@ -20,10 +20,18 @@ public class ShoppingCart {
     public void addProduct(Product product) {
 
         if(products.contains(product)){
-            product.setQuantity(product.getQuantity() + 1);
+            this.products.forEach(product1 -> {
+                if(product == product1){
+                    product1.setQuantity(product.getQuantity() + 1);
+                }
+            });
         } else {
             products.add(product);
-            product.setQuantity(1);
+            this.products.forEach(product1 -> {
+                if(product == product1){
+                    product1.setQuantity(1);
+                }
+            });
         }
     }
 
@@ -56,25 +64,15 @@ public class ShoppingCart {
     }
 
     public List<Product> replace(Product productToReplace, Product replaceProduct){
-//        products.set(products.indexOf(productToReplace), replaceProduct);
-//        if(products.contains(replaceProduct)){
-//            replaceProduct.setQuantity(replaceProduct.getQuantity() + 1);
-//        } else {
-//            products.add(replaceProduct);
-//            replaceProduct.setQuantity(1);
-//        }
-//        products.forEach(product -> {
-//            System.out.print(" " + product.getQuantity() + " " + product.getName() + " " + product.getPrice());
-//        });
 
-        this.products
-                .forEach(product -> {
-                    if(productToReplace.getName().equals(product.getName())){
-                        product = replaceProduct;
-                    }
+        if(this.products.contains(productToReplace)){
 
-                });
+            this.products.remove(productToReplace);
+            this.products.add(replaceProduct);
+            replaceProduct.setQuantity(1);
+        }
         return products;
+
 
     }
 

@@ -33,20 +33,17 @@ public class Main {
         cart.addProduct(p4);
         cart.addProduct(p5);
         cart.addProduct(p5);
-
-//        cart.replaceAll(Product "element_3","element_6");
-//        cart.set("locker", newP5);
-
+        cart.replace(p5, newP5);
+        cart.addProduct(newP5);
+        cart.addProduct(newP5);
+        cart.addProduct(newP5);
         cart.getTotalQuantity();
         cart.getDiscount();
         cart.getTotalPrice();
 
 
         cart.print();
-        cart.replace(p5, newP5);
-//        cart.replace(p5, newP5);
-//        cart.replace(p5, newP5);
-//        cart.replace(p5, newP5);
+
     }
 
 }
